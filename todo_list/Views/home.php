@@ -1,4 +1,14 @@
 <!-- Lista de contenidos, input, btn añadir, leer, crear, editar, eliminar -->
+<?php
+
+require_once __DIR__ . '/../controllers/Tareas.php';
+
+use Letalandroid\controllers\Tareas;
+
+$tareas = Tareas::read();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,6 +29,10 @@
             <input class="btn btn-dark" type="submit" value="Submit">
         </form>
     </div>
+    <script>
+        const tareas = <?= json_encode($tareas); ?>;
+        console.log(tareas);
+    </script>
 </body>
 
 </html>
