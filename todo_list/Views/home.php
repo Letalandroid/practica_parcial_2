@@ -38,6 +38,7 @@ $tareas = Tareas::read();
                 </li>
             <?php } ?>
         </ul>
+        <button onclick="location.reload()">Cholo aqui puedes recargar</button>
     </div>
 </body>
 
