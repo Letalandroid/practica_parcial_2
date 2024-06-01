@@ -58,6 +58,24 @@ class Tareas {
         }
     }
 
+    static function edit($id, $desc)
+    {
+        try {
+
+            $db = new Database();
+
+            $query = $db->connect()->prepare('update tareas set descripcion=? where tarea_id=?;');
+            $query->bindParam(1, $desc, PDO::PARAM_STR);
+            $query->bindParam(2, $id, PDO::PARAM_INT);
+            $query->execute();
+
+            $results = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (PDOException $e) {
+            throw new PDOException($e);
+        }
+    }
+
     static function delete($id)
     {
         try {

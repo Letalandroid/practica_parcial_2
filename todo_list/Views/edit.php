@@ -21,10 +21,10 @@ $tarea = Tareas::getDataId($_GET['id']);
 </head>
 
 <body>
-    <form class="m-5" action="#">
+    <form class="m-5" method="post" action="/controllers/edit.php">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">#</span>
-            <input disabled type="number" name="id" class="form-control" placeholder="Id" value="<?= $tarea[0]['tarea_id'] ?>">
+            <input hidden type="text" name="id" class="form-control" placeholder="Id" value="<?= $tarea[0]['tarea_id'] ?>">
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Tarea</span>
