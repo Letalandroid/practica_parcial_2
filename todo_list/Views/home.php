@@ -23,16 +23,16 @@ $tareas = Tareas::read();
 
 <body>
     <div class="m-5">
-        <form action="#" class="input-group mb-3">
+        <form action="/controllers/add.php" method="post" class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Tarea</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <input class="btn btn-dark" type="submit" value="Submit">
+            <input type="text" name="desc" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input class="btn btn-dark" type="submit" value="Añadir">
         </form>
         <ul class="list-group">
             <?php foreach ($tareas as $tarea) { ?>
                 <li class="list-group-item">
                     <?= $tarea['descripcion'] ?>
-                    <div><a href="#" type="button" class="btn btn-primary">✍️</a>
+                    <div><a href="/Views/edit.php?id=<?= $tarea['tarea_id'] ?>" type="button" class="btn btn-primary">✍️</a>
                         <a href="/controllers/delete.php?id=<?= $tarea['tarea_id'] ?>" type="button" class="btn btn-danger">🗑️</a>
                     </div>
                 </li>
