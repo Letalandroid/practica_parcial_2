@@ -28,11 +28,12 @@ $tareas = Tareas::read();
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             <input class="btn btn-dark" type="submit" value="Submit">
         </form>
+        <ul class="list-group">
+            <?php foreach ($tareas as $tarea) { ?>
+            <li class="list-group-item"><?= $tarea['descripcion'] ?></li>
+            <?php } ?>
+        </ul>
     </div>
-    <script>
-        const tareas = <?= json_encode($tareas); ?>;
-        console.log(tareas);
-    </script>
 </body>
 
 </html>

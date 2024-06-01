@@ -6,3 +6,8 @@ input {
     color: #fff !important;
     background-color: #222 !important;
 }
+
+.list-group-item {
+    color: #fff;
+    background-color: #444;
+}
