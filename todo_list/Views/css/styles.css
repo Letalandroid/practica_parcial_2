@@ -8,6 +8,9 @@ input {
 }
 
 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #fff;
     background-color: #444;
 }

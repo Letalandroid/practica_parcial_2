@@ -23,4 +23,21 @@ class Tareas {
             throw new PDOException($e);
         }
     }
+
+    static function delete($id)
+    {
+        try {
+
+            $db = new Database();
+
+            $query = $db->connect()->prepare('delete from tareas where tarea_id=?');
+            $query->bindParam(1, $id, PDO::PARAM_STR);
+            $query->execute();
+
+            $results = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (PDOException $e) {
+            throw new PDOException($e);
+        }
+    }
 }

@@ -30,7 +30,12 @@ $tareas = Tareas::read();
         </form>
         <ul class="list-group">
             <?php foreach ($tareas as $tarea) { ?>
-            <li class="list-group-item"><?= $tarea['descripcion'] ?></li>
+                <li class="list-group-item">
+                    <?= $tarea['descripcion'] ?>
+                    <div><a href="#" type="button" class="btn btn-primary">✍️</a>
+                        <a href="/controllers/delete.php?id=<?= $tarea['tarea_id'] ?>" type="button" class="btn btn-danger">🗑️</a>
+                    </div>
+                </li>
             <?php } ?>
         </ul>
     </div>
